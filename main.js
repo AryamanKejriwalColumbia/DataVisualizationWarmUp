@@ -50,11 +50,11 @@ function display_ticks() {
   fill("#C9ADA7");
   
   translate(width/2, height/2);
-  rect(width*0.425, 0, width/25, height/100);
+  rect(width*0.425, 0, width/25, height/100, width/200);
   
   for(let i = 0; i < 11; i++) {
     rotate(TWO_PI/12);
-    rect(width*0.425, 0, width/25, height/100);
+    rect(width*0.425, 0, width/25, height/100, width/200);
   }
   
   rotate(TWO_PI/12);
