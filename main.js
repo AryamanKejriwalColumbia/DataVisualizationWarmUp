@@ -21,7 +21,7 @@ let current_time = new Time(0, 0, 0);
 let last_time = new Time(0, 0, 0);
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(700, 700);
   current_time = new Time(hour(), minute(), second());
 }
 
