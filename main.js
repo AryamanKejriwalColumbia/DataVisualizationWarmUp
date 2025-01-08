@@ -27,6 +27,7 @@ function setup() {
 
 function draw() {
   background("#F2E9E4");
+  noStroke();
   
   last_time = current_time;
   current_time = new Time(hour(), minute(), second());
@@ -44,6 +45,20 @@ function draw() {
 
 function display_ticks() {
   
+  rectMode(CENTER);
+  fill("#C9ADA7");
+  
+  translate(width/2, height/2);
+  rect(width*0.425, 0, width/25, height/100);
+  
+  for(let i = 0; i < 11; i++) {
+    rotate(TWO_PI/12);
+    rect(width*0.425, 0, width/25, height/100);
+  }
+  
+  rotate(TWO_PI/12);
+  translate(-width/2, -height/2);
+  
 }
 
 function display_time(hour, minute, second) {
@@ -56,14 +71,14 @@ function display_time(hour, minute, second) {
   if(hour != 0) {
     arc(width/2, height/2, width*0.65, height*0.65, 0, map(hour, 0, 12, 0, TWO_PI), PIE);
   } else {
-    arc(width/2, height/2, width*0.65, height*0.65, 0, 0.07, PIE);
+    arc(width/2, height/2, width*0.65, height*0.65, 0, 0.05, PIE);
   }
   
   fill("#4A4E69");
   if(minute != 0) {
     arc(width/2, height/2, width*0.5, height*0.5, 0, map(minute, 0, 60, 0, TWO_PI), PIE);
   } else {
-    arc(width/2, height/2, width*0.5, height*0.5, 0, 0.07, PIE);
+    arc(width/2, height/2, width*0.5, height*0.5, 0, 0.05, PIE);
   }
   
   noStroke();
@@ -71,6 +86,6 @@ function display_time(hour, minute, second) {
   if(second != 0) {
     arc(width/2, height/2, width*0.35, height*0.35, 0, map(second, 0, 60, 0, TWO_PI), PIE);
   } else {
-    arc(width/2, height/2, width*0.35, height*0.35, 0, 0.07, PIE);
+    arc(width/2, height/2, width*0.35, height*0.35, 0, 0.05, PIE);
   }
 }
